@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="Public/plugins/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="default/css/css/style.css"/>
+		
+		<script src="Public/plugins/vue/vue.min-1.0.28.js"></script>
+	</head>
+	<body>
+		<div class="mui-content">
+			<!--刷新区域	-->
+			<div id="pullrefresh">				
+				<div class="mui-card" v-cloak v-for="item in dataList" :data-src="getSrc(item.id)" :data-title="item.values.x_title" :data-id="item.id">
+					<div class="mui-card-header mui-card-media border-0">
+						<img src="http://img0.imgtn.bdimg.com/it/u=724706100,3227384891&fm=214&gp=0.jpg" />
+						<div class="mui-media-body">
+							{{item.values.p_nick}}
+							<p>发表于 {{item.firstTime | date}}</p>
+						</div>
+					</div>
+					<div class="mui-card-content" >
+						<img :src="getImg(item.values.x_images)" :alt="item.values.x_title" width="100%"/>
+					</div>
+					<div class="mui-card-footer border-0">
+						<a class="mui-card-link">Like</a>
+						<a class="mui-card-link">Read more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="Public/plugins/mui/js/mui.min.js"></script>
+	<script src="Public/js/config.js"></script>
+	<script src="Public/js/VueFilter.js"></script>
+	<script src="default/js/home/home.js"></script>
+</html>

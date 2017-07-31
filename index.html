@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="default/iconfont/iconfont.css"/>
+		<link rel="stylesheet" href="Public/plugins/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="default/css/css/style.css"/>
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">
+			<h1 id="title" class="mui-title">首页</h1>
+		</header>-->
+		<nav class="mui-bar mui-bar-tab">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="home.html">
+				<span class="mui-icon iconfont icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="release.html">
+				<span class="mui-icon iconfont icon-release"></span>
+				<span class="mui-tab-label">发布</span>
+			</a>
+			<a class="mui-tab-item" href="personal.html">
+				<span class="mui-icon iconfont icon-personal-center"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+		<script src="Public/plugins/mui/js/mui.min.js"></script>
+		<script src="Public/js/mui.tools.js"></script>
+		<script type="text/javascript" charset="utf-8"> 
+			if(mui.os.plus) {
+				/*禁止屏幕旋转*/
+				mui.plusReady(function () { 
+					plus.screen.lockOrientation("portrait-primary"); 
+				}); 
+				document.write('<script src="default/js/index/indexOS.js" type="text/javascript"></s'+'cript>');
+			} else {
+				document.write('<script src="default/js/index/indexWechat.js" type="text/javascript"></s'+'cript>');
+			}
+		</script>
+	</body>
+
+</html>

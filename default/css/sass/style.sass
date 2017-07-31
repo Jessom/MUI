@@ -1,0 +1,88 @@
+/**********************************************************************/
+/****************************  重写MUI样式  ****************************/
+/**********************************************************************/
+
+
+html
+  font-size: 62.5%
+  body
+    font-family: "Microsoft YaHei", "SimSun", Verdana, Arial, Helvetica, sans-serif
+    font-size: 1.4rem
+
+@import "_variable"
+@import "_base"
+
+/**
+ * 重写MUI header样式
+ * @type {[type]}
+ */
+header
+  background-color: $theme-color !important
+  box-shadow: none !important
+  h1,
+  a,
+  button
+    color: $white-color !important
+
+/**
+ * 重写首页底部tabBar
+ * @type {[type]}
+ */
+.mui-bar-tab
+  .mui-tab-item.mui-active
+    color: $theme-color
+.mui-bar
+  box-shadow: none
+
+/**
+ * 重写MUI card样式，取消左右边距及阴影
+ * @type {[type]}
+ */
+.mui-card
+  box-shadow: none
+  margin: 10px 0
+
+/**
+ * 取消边框线
+ * @type {Number}
+ */
+.mui-card-header,
+.mui-card-footer,
+.mui-table-view,
+.mui-input-group,
+.mui-input-row:last-child
+  &::after,
+  &::before
+    height: 0
+
+/**
+ * 修改mui from lable及input宽度
+ * @type {[type]}
+ */
+.mui-input-group
+  label
+    width: 22%
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea
+  width: 78%
+
+/**
+ * 重写MUI块级按钮内边距，
+ * 默认padding: 15px 0
+ * @type {[type]}
+ */
+.mui-btn-block
+  padding: 10px 0
+
+/**
+ * 重写MUI 九宫格
+ * @type {[type]}
+ */
+.mui-grid-view.mui-grid-9
+  background-color: transparent
+  border-top: none
+  border-left: none
+  .mui-table-view-cell
+    border-right: none
+    border-bottom: none

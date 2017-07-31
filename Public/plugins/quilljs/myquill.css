@@ -1,0 +1,124 @@
+* {
+	-webkit-touch-callout: none;
+}
+
+
+.ql-container {
+	background: #fff;
+	height: 100%;
+	width: 100%;
+}
+.ql-editor {
+	height: 100%;
+	background: #fff;
+}
+.toolbtn {
+	font-size: 2rem !important;
+	color: #fff !important;
+	padding: 0 8px !important;
+}
+.ql-editor,.ql-editor *, .ql-clipboard, .ql-clipboard * {
+	-webkit-user-select:text;
+}
+.ql-hidden, .ql-clipboard {
+	display: none;
+}
+.ql-toolbar {
+	position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -80px;
+    z-index: 10;
+}
+.ql-toolbar button {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin: 0 2px;
+	height: 44px;
+	color: #fff;
+}
+.ql-formats button {
+	-webkit-tap-highlight-color: rgba(255,255,255,0) !important;
+}
+
+
+
+/*编辑区域*/
+.ql-editor {
+	overflow-y: auto;
+	padding: 10px 15px 0 15px;
+}
+/*.ql-editor img {
+	width: 40%;
+	margin: 0px 60% 0px 0px;
+}*/
+
+.ql-editor p, .ql-editor h1, .ql-editor h2, .ql-editor h5, .ql-editor ol, .ql-editor ul {
+	line-height: 1.5;
+}
+.ql-editor p, .ql-editor h5, .ql-editor h3{
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+.ql-editor ol, .ql-editor ul {
+	color: #8f8f94;
+}
+.ql-editor h3 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+.ql-editor h5 {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+.ql-editor p {
+	font-size: 1.4rem;
+	margin-bottom: 5px;
+}
+.ql-indent-1 {
+	text-indent: 2em;
+}
+
+input.ql-image {
+	display: none;
+}
+
+
+/* 字体图标 */
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1497233584612'); /* IE9*/
+  src: url('iconfont.eot?t=1497233584612#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./font/iconfont.woff?t=1497233584612') format('woff'), /* chrome, firefox */
+  url('./font/iconfont.ttf?t=1497233584612') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./font/iconfont.svg?t=1497233584612#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-image:before { content: "\e62c"; }
+
+.icon-color:before { content: "\e6bf"; }
+
+.icon-h:before { content: "\e681"; }
+
+.icon-indent:before { content: "\e68d"; }
+
+.icon-h1:before { content: "\e616"; }
+
+.icon-h2:before { content: "\e617"; }
+
+.icon-ul:before { content: "\e81c"; }
+
+.icon-ol:before { content: "\e69b"; }
+
+
+/* 字体图标 */

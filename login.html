@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我要登录</title>
+		<link href="Public/plugins/mui/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="default/css/css/style.css" />
+		<link rel="stylesheet" href="default/iconfont/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="default/css/css/login.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我要登录</h1>
+		</header>
+		<div class="mui-content">
+			<form id='login-form' class="mui-input-group mt20">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input required type="text" v-model="userName" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input required type="password" v-model="userPwd" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+			</form>
+			<div class="mui-content-padded mt20">
+				<button class="mui-btn mui-btn-block btn-base " @click="goLogin() | debounce 0" :disabled="loading"><i class=" mui-spinner" v-show="loading" v-cloak></i>登录</button>
+				<div class="mui-text-center mt20">
+					<a href="reg.html">注册账号</a> <span>|</span>
+					<a href="forget_password.html">忘记密码</a>
+					
+				</div>
+			</div>
+
+			<div class="other-login">
+				<div class="break-line"><span>其他登陆</span></div>
+				<div class="mui-clearfix type mui-text-center">
+					<div class="mui-pull-left">
+						<div><i class="iconfont icon-shouji-daiyuankuang phone"></i></div>
+						<div class="size12">手机号登录</div>
+					</div>
+					<div class="mui-pull-left">
+						<div> <i class="iconfont icon-weixin--lvyuandi wechat"></i></div>
+						<div class="size12">微信</div>
+					</div>
+					<div class="mui-pull-left">
+						<div> <i class="iconfont icon-qq-circle qq"></i></div>
+						<div class="size12">QQ</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="Public/plugins/mui/js/mui.min.js"></script>
+		<script src="Public/js/config.js"></script>
+		<script src="Public/plugins/vue/vue.min-1.0.28.js"></script>
+		<script src="Public/js/mui.tools.js"></script>
+		<script src="default/js/login/login.js"></script>
+	</body>
+
+</html>

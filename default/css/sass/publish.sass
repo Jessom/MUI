@@ -1,0 +1,32 @@
+@import "_variable"
+
+$itemW: 60px
+
+.mui-grid-view.mui-grid-9
+  position: absolute
+  bottom: 60px
+  width: 100%
+  .mui-table-view-cell.mui-media
+    a
+      display: block
+      height: $itemW
+      width: $itemW
+      margin: 0 auto
+      border-radius: $radius-100
+      background-color: $theme-color
+      color: $white-color
+      animation: move .5s .5s cubic-bezier(0, 0.77, 0.61, 1.48) both
+      span
+        font-size: $size20
+      .mui-media-body
+        color: $white-color
+        font-size: $size14
+        margin-top: 5px
+
+@keyframes move
+  0%
+    transform: translateY(40px)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1

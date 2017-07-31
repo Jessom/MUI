@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="Public/plugins/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="default/css/css/style.css" />
+		<link rel="stylesheet" href="default/iconfont/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="Public/plugins/cropper/cropper.css" />
+		<style type="text/css">
+			html,body,.mui-content,.cropper-wrapper{height: 100%;}
+			.cropper-toolbar{position: fixed;bottom: 0;display:flex;flex-direction: row; justify-content: space-between; padding: 5px 15px; width: 100%;background-color: #333;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-btn mui-btn-link mui-pull-right" v-cloak v-show="!isOS" @click="goUpimage() | debounce 0">完成</a>
+			<h1 class="mui-title">个人信息</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view mt20" v-show="isCropper">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right lineh42" @click="upimage() | debounce 0">
+						<span>头像</span>
+						<span class="mui-pull-right mr20 lineh0"><img :src="image" class="mui-media-object"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						昵称
+						<span class="mui-pull-right mr20" v-text="nick"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					会员号
+
+					<span class="mui-pull-right mr20" v-text="uid"></span>
+
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						手机号
+						<span class="mui-pull-right mr20" v-text="phone"></span>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mt20" v-show="isCropper">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						性别
+						<span class="mui-pull-right mr20" v-text="sex"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						个性签名
+						<span class="mui-pull-right mr20 mui-ellipsis" v-text="sign" style="width: 64%;"></span>
+					</a>
+				</li>
+			</ul>
+			
+			<!--退出登录-->
+			<ul class="mui-table-view mt20 loginout-wrapper" v-show="isCropper">
+	            <li class="mui-table-view-cell loginout">
+	                退出
+	            </li>
+	        </ul>
+			
+			<!--裁图-->
+			<div class="cropper-wrapper" v-cloak v-show="!isCropper">
+				<img src="" class="cropper-img" />
+			</div>
+			<div class="cropper-toolbar" v-cloak v-show="!isCropper && isOS">
+				<button class="mui-btn btn-cancel" @click="cancelUp() | debounce 0">取消</button>
+				<button class="mui-btn btn-base" @click="goUpimage() | debounce 0">完成</button>
+			</div>
+		</div>
+		<script src="Public/plugins/jquery/jquery.min.js"></script>
+		<script src="Public/plugins/mui/js/mui.min.js"></script>
+		<script src="Public/js/config.js"></script>
+		<script src="Public/js/mui.tools.js"></script>
+		<script src="Public/plugins/vue/vue.min-1.0.28.js"></script>
+		<script src="Public/plugins/cropper/cropper.js"></script>
+		<script src="default/js/userinfo/userinfo.js"></script>
+	</body>
+</html>

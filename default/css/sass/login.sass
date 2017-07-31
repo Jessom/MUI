@@ -1,0 +1,47 @@
+@import "_variable"
+
+.mui-text-center
+  a,
+  span
+    color: $light-gray
+  span
+    margin: 0 10px
+
+$other-w: 80px
+.other-login
+  position: absolute
+  bottom: 40px
+  width: 100%
+  padding: 0 15px
+  .break-line
+    text-align: center
+    position: relative
+    &::after
+      content: ""
+      height: 1px
+      position: absolute
+      left: 0
+      width: 100%
+      background-color: $light-gray
+      transform: scaleY(.3)
+      z-index: 1
+    span
+      display: inline-block
+      background-color: #efeff4
+      position: absolute
+      top: -10px
+      z-index: 2
+      width: $other-w
+      margin-left: -$other-w / 2
+  .type
+    margin-top: 40px
+    .mui-pull-left
+      width: 33.33%
+    .iconfont
+      font-size: $size36
+      &.phone
+        color: $phone-color
+      &.wechat
+        color: $wechat-color
+      &.qq
+        color: $qq-color

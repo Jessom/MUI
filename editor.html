@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>编辑</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="Public/plugins/mui/css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="default/iconfont/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="default/css/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="default/css/css/editor.css"/>
+		
+		<script src="Public/plugins/vue/vue.min-1.0.28.js"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-btn mui-btn-link mui-pull-right" v-cloak v-show="isCropper" @click="getImg() | debounce 0">完成</a>
+		    <a class="mui-btn mui-btn-link mui-pull-right" v-cloak v-show="!isCropper" @click="preview() | debounce 0">预览</a>
+		    <h1 class="mui-title">编辑</h1>
+		</header>
+		<div class="mui-content">
+			<div class="wrapper" v-cloak v-show="!isCropper">
+				<!--头图-->
+				<div class="headline-container mui-clearfix" v-show="!isEditor">
+					<div class="headline-add" @click="addImg() | debounce 0" v-show="headlines.length === 0"><i class="iconfont icon-camera"></i></div>
+					<!--图片-->
+					<div class="headline-img-wrapper mui-clearfix" v-cloak v-show="headlines.length !== 0">
+						<div class="headline-img-item mui-pull-left" v-for="i in headlines" :style="getBgimg(i)">
+							<i class="headline-delete-btn" @click="deleteImg($index) | debounce 0"></i>
+						</div>
+						<div class="headline-img-addbtn mui-pull-left" @click="addImg() | debounce 0" v-show="!(headlines.length === maxLength)"><i class="iconfont icon-plus"></i></div>
+					</div>
+				</div>
+				
+				<!--标题-->
+				<div class="mt20 mb20" v-show="!isEditor">
+					<p class="size12 editor-subtitle">标题</p>
+					<form class="mui-input-group">
+					    <div class="mui-input-row">
+					        <input type="text" v-model="title" class="mui-input-clear size16" placeholder="place entry title">
+					    </div>
+					</form>
+				</div>
+				
+				<!--编辑器-->
+				<button class="btn-link editor-success" v-cloak v-show="isEditor" @click="editorSuccess()">完成编辑</button>
+				<p class="size12 editor-subtitle" v-show="!isEditor">内容</p>
+				<div id="editor" @click="editorContent()"></div>
+			</div>
+			
+			<!--裁切图片-->
+			<div class="cropper-wrapper" v-cloak v-show="isCropper">
+	        	<img src="" class="cropper-img" />
+	       	</div>
+		</div>
+	</body>
+	<script src="Public/plugins/mui/js/mui.min.js"></script>
+	<script src="Public/js/mui.tools.js"></script>
+	<script src="Public/plugins/jquery/jquery.min.js"></script>
+	<script src="Public/plugins/cropper/cropper.js"></script>
+	<script src="Public/js/editor/compress.js"></script>
+	<script src="Public/plugins/quilljs/quill.js"></script>
+	<script src="Public/plugins/quilljs/myQuill.js"></script>
+	<script src="default/js/editor/editor.js"></script>
+</html>
